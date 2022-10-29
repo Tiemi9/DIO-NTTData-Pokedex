@@ -1,12 +1,19 @@
 
 const pokeApi = {}
 
-pokeApi.getPokemons = (offset = 0, limit = 10) => {
+pokeApi.getPokemonsDetail = (pokemon) => {
+    return fetch(pokemon.url).then((response) => response.json())
+}
+
+pokeApi.getPokemons = (offset = 0, limit = 5) => {
     const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
+    
     return fetch(url) // fetch retorna uma promisse de response, processamento assincrono (para o que não tem a resposta imediata).
         .then((response) => response.json()) //transformando o response em uma promessa do body convertido em jason
         .then((jsonBody) => jsonBody.results)  //vamos pegar no jason o results
-        .catch((error) => console.error(error))
+        .then((pokemons) => pokemons.map(pokeApi.getPokemonsDetail)) // mapeando  alista de requisição dos detlahes dos pokemons((pokemon) => fetch(pokemon.url).then((response) => response.json())))
+        .then((detailsRequest) => Promise.all(detailsRequest))
+        .then((pokemonDetails) => pokemonDetails)
     }
 /* A sintaxe reduzida, diminui as linhas de código, caso não o fizesse, ficaria assim:
 
@@ -21,11 +28,11 @@ pokeApi.getPokemons = (offset = 0, limit = 10) => {
     })
 */
 
-Promise.all([ //recebe uma lista(array) de promessas
-fetch('https://pokeapi.co/api/v2/pokemon/1/'),
-fetch('https://pokeapi.co/api/v2/pokemon/1/'),
-fetch('https://pokeapi.co/api/v2/pokemon/1/'),
-fetch('https://pokeapi.co/api/v2/pokemon/1/')
-]).then((results) => {
-console.log(results)
-})
+// Promise.all([ //recebe uma lista(array) de promessas
+// fetch('https://pokeapi.co/api/v2/pokemon/1/'),
+// fetch('https://pokeapi.co/api/v2/pokemon/1/'),
+// fetch('https://pokeapi.co/api/v2/pokemon/1/'),
+// fetch('https://pokeapi.co/api/v2/pokemon/1/')
+// ]).then((results) => {
+// console.log(results)
+// })
