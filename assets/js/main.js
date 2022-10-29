@@ -1,7 +1,3 @@
-const offset = 0
-const limit = 10
-const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
-
 function convertPokemonToLi(pokemon) {
     return `
     <li class="pokemon">
@@ -21,16 +17,24 @@ function convertPokemonToLi(pokemon) {
 }
 const pokemonList = document.getElementById('pokemonList')
 
-pokeApi.getPokemons().then((pokemons) => { // vem a lista
-    const listItems = []
-    
-    pokemons.map()
+pokeApi.getPokemons().then((pokemons = []) => { // vem a lista vazia
+    // const listItems = []
+    pokemonList.innerHTML += pokemons.map(convertPokemonToLi).join('') //forma mais elegante de fazer todo o código comentado abaixo
+    // const newList = pokemons.map((pokemon) => { //passando uma função transformadora, podemos colocar valores como index, value, array, etc
+    //     return convertPokemonToLi(pokemon) //retorna a lista convertida em li sem usar o for comentado abaixo
+    // })
 
-    for (let i = 0; i < pokemons.length; i++) { //transformando o lista de pokemons recebidas em jason para a lista de HTML
-        const pokemon = pokemons[i];//precisamos transferir tudo para o HTML*
-        listItems.push(convertPokemonToLi(pokemon))
-    }
+    //console.log(pokemons)
 
-    console.log(listItems)
+    // const newHtml = newList.join('') //junta todos os elementos da lista como string com o separador escolhido
+
+    // pokemonList.innerHTML += newHtml
+
+    // for (let i = 0; i < pokemons.length; i++) { //transformando o lista de pokemons recebidas em jason para a lista de HTML
+    //     const pokemon = pokemons[i];//precisamos transferir tudo para o HTML*
+    //     listItems.push(convertPokemonToLi(pokemon))
+    // }
+
+    // console.log(listItems)
 
 })

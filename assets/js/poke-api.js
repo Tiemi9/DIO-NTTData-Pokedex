@@ -9,6 +9,7 @@ pokeApi.getPokemons = (offset = 0, limit = 10) => {
         .catch((error) => console.error(error))
     }
 /* A sintaxe reduzida, diminui as linhas de código, caso não o fizesse, ficaria assim:
+
     .then(function (response) { //then = chame essa função.
         response.jason().then(responseBody)
     })
@@ -19,3 +20,5 @@ pokeApi.getPokemons = (offset = 0, limit = 10) => {
         console.log("Requisição Concluìda")
     })
 */
+
+ 
