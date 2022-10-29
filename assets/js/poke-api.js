@@ -21,4 +21,11 @@ pokeApi.getPokemons = (offset = 0, limit = 10) => {
     })
 */
 
- 
+Promise.all([ //recebe uma lista(array) de promessas
+fetch('https://pokeapi.co/api/v2/pokemon/1/'),
+fetch('https://pokeapi.co/api/v2/pokemon/1/'),
+fetch('https://pokeapi.co/api/v2/pokemon/1/'),
+fetch('https://pokeapi.co/api/v2/pokemon/1/')
+]).then((results) => {
+console.log(results)
+})
