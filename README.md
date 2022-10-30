@@ -21,4 +21,4 @@ Além disso, exploramos todos os fundamentos de desenvolvimento Web aprendidos a
 https://www.linkedin.com/in/cristiemim9
 
  ### 🎉 Agradecimentos 
-##### À toda equipe da DIO.me, e principalmete ao Renan Johannsen e "Lemaozito" que nos acompanharam durante esse apprendizado, partilhando dúvidas e enriquecendo o aprendizado. Obrigada pessoal... E bora codae e decolar! 🚀
+##### À toda equipe da DIO.me, e principalmete ao Renan Johannsen e "Lemaozito" que nos acompanharam durante esse apprendizado, partilhando dúvidas e enriquecendo o aprendizado. Obrigada pessoal... E bora codar e decolar! 🚀
