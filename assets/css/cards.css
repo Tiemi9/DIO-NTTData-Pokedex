@@ -1,0 +1,139 @@
+li {
+    list-style: none;
+}
+
+.card {
+    background-color: #49d0b0;
+    color: #ffffffd7;
+    width: 30rem;
+    height: 20rem;
+    border-radius: 25px 25px 0 0;
+    margin: 1rem auto 0;
+    padding: 1rem;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .5rem;
+}
+
+.button {
+    background-color: transparent;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.button:hover {
+    width: 50px;
+}
+
+.name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: .15rem;
+    margin-top: 1rem;
+}
+
+.pokemons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.types {
+    display: flex;
+    padding: 5px 0;
+}
+
+.type {
+    background-color: #ffffff38;
+    margin: 0.5rem 0.2rem 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 15px;
+    width: 4rem;
+    font-size: smaller;
+    align-items: center;
+    text-align: center;
+}
+
+.type:hover {
+    background-color: #ffffff63;
+
+}
+
+.number {
+    text-align: end;
+    align-items: center;
+}
+
+.number:hover {
+    font-size: larger;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+}
+
+.pokemonImg {
+    width: 14rem;
+    text-align: center;
+}
+
+.pokemonImg:hover {
+    width: 15rem;
+}
+
+.main {
+    background-color: #ffffff5e;
+    width: 30rem;
+    height: 28rem;
+    border-radius: 0 0 25px 25px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.lista {
+    line-height: 2rem;
+    color: rgb(109, 107, 107);
+}
+
+.navgation {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 4rem 0 0;
+}
+
+.navBar {
+    border: 1px solid rgb(109, 107, 107);
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    margin: 0;
+    padding: .2rem 1rem;
+    background-color: rgba(109, 107, 107, 0.068);
+    cursor: pointer;
+}
+
+.navBar:hover {
+    background-color: rgba(109, 107, 107, 0.459);
+    border: none;
+}
+
+.about {
+    margin-top: 1rem;
+}
+
+.breeding h3 {
+    margin: 1rem 0 1rem;
+}
+
+
+@media screen and (max-width: 487px) {
+    body {
+        background: none;
+    }
+}

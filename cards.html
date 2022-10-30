@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex | Cards</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Roboto:wght@100;300;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/cards.css">
+</head>
+
+<body>
+    <section class="card">
+        <header class="header">
+            <div class="options">
+                <button class="button">
+                    <a href="./index.html"><img src="./assets/img/seta.png" alt=""></a>
+                </button>
+                <button class="button">
+                    <img src="./assets/img/whiteLike.png" alt="">
+                </button>
+            </div>
+        </header>
+
+        <h2 class="name">Bulbasaur</h2>
+        <hr>
+        <div class="pokemons">
+            <ul class="types">
+                <li class="type">grass</li>
+                <li class="type">poison</li>
+            </ul>
+
+            <number class="number">#001</number>
+        </div>
+
+        <div class="img">
+            <img class="pokemonImg"
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
+                alt="">
+        </div>
+
+    </section>
+
+
+    <main class="main">
+        <nav class="navgation">
+            <li class="lista navBar">About</li>
+            <li class="lista navBar">Base Stats</li>
+            <li class="lista navBar">Evolution</li>
+            <li class="lista navBar">Moves</li>
+        </nav>
+    <hr>
+        <ul class="about">
+            <li class="lista aboutPokemon">Species</li>
+            <li class="lista aboutPokemon">Height</li>
+            <li class="lista aboutPokemon">weight</li>
+            <li class="lista aboutPokemon">Abilities</li>
+        </ul>
+
+        <ul class="breeding">
+            <h3>Breeding</h3>
+            <li class="lista pokemonBreeding">Gender</li>
+            <li class="lista pokemonBreeding">Egg Group</li>
+            <li class="lista pokemonBreeding">Egg Cycle</li>
+        </ul>
+    </main>
+</body>
+
+</html>
