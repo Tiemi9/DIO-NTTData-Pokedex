@@ -5,7 +5,10 @@
 }
 
 body {
-    background-color: #e9eef8;
+    background-image: linear-gradient(lightblue, lightgreen, lightsalmon);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
 }
 
 .content {
@@ -13,6 +16,13 @@ body {
     height: 100vh;
     padding: 1rem;
     background-color: #ffffff;
+}
+
+h1 {
+    color: #ffffff;    
+    text-shadow: rgb(5, 252, 137) 5px 0 10px;
+    font-size: 3rem;
+    -webkit-text-stroke: 1px rgba(8, 8, 8, 0.164);
 }
 
 @media screen and (min-width: 992px) {

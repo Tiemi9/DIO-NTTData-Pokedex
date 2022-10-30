@@ -5,6 +5,7 @@
     padding: 0;
     margin: 0;
 }
+
 .normal {
     background-color: #a6a877;
 }
@@ -86,12 +87,20 @@
     border-radius: 1rem;
 }
 
+.pokemon:hover {
+    opacity: 0.7;
+    cursor: pointer;
+    border: 1px solid grey;
+}
+
 .pokemon .number {
-    color: #1e8a71;
+    color: #0000005e;
     text-align: right;
     font-size: .625rem;
 }
-
+.number::before {
+    content: "#0";
+}
 .pokemon .name {
     color: #ffffff;
     margin-bottom: 0.25rem;
