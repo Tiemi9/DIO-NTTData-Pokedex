@@ -114,7 +114,7 @@ fetch(url)
 O que nos interessa de fato é o 'results' do body, por isso vamos direto ao ponto.
 ```js
 fetch(url)
-    .then((response) => return response.json())
+    .then((response) =>  response.json())
     .then((jsonBody) => jasonBody.results)
     .then((pokemonList) => { //dessa forma irá retornar a lista dos pokemons como queremos em array
         debugger
@@ -124,7 +124,7 @@ fetch(url)
     .finally(console.log('Requisição Concluída!')); 
 ```
 
-Precismaos converter os dados que recebemos em array para a liusta (li) do html
+Precismaos converter os dados que recebemos em array para a lista (li) do html
 
 ```js
 function convertPokemonToLi (pokemon) {

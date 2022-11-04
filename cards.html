@@ -22,14 +22,14 @@
 </head>
 
 <body>
-    <section class="card">
+    <section id="pokemonCards" class="card">
         <header class="header">
             <div class="options">
                 <button class="button">
                     <a href="./index.html"><img src="./assets/img/seta.png" alt=""></a>
                 </button>
                 <button class="button">
-                    <img src="./assets/img/whiteLike.png" alt="">
+                    <img src="./assets/img/whiteLike.png" alt="ícone de coração para curtir o card">
                 </button>
             </div>
         </header>
@@ -48,7 +48,7 @@
         <div class="img">
             <img class="pokemonImg"
                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
-                alt="">
+                alt="Imagem do Bulbasaur">
         </div>
 
     </section>
@@ -56,26 +56,41 @@
 
     <main class="main">
         <nav class="navgation">
-            <li class="lista navBar">About</li>
-            <li class="lista navBar">Base Stats</li>
-            <li class="lista navBar">Evolution</li>
-            <li class="lista navBar">Moves</li>
+            <li id="1" class="lista navBar">About</li>
+            <li id="2" class="lista navBar">Base Stats</li>
         </nav>
-    <hr>
-        <ul class="about">
-            <li class="lista aboutPokemon">Species</li>
-            <li class="lista aboutPokemon">Height</li>
-            <li class="lista aboutPokemon">weight</li>
-            <li class="lista aboutPokemon">Abilities</li>
-        </ul>
+            <hr>
+        <div data-id="1" class="about show" >
+            <ul class="general">
+                <li class="lista aboutPokemon">Species</li>
+                <li class="lista aboutPokemon">Height</li>
+                <li class="lista aboutPokemon">weight</li>
+                <li class="lista aboutPokemon">Abilities</li>
+            </ul>
+    
+            <ul data-id="1" class="breeding">
+                <h3>Breeding</h3>
+                <li class="lista pokemonBreeding">Gender</li>
+                <li class="lista pokemonBreeding">Egg Group</li>
+                <li class="lista pokemonBreeding">Egg Cycle</li>
+            </ul>
+        </div>
 
-        <ul class="breeding">
-            <h3>Breeding</h3>
-            <li class="lista pokemonBreeding">Gender</li>
-            <li class="lista pokemonBreeding">Egg Group</li>
-            <li class="lista pokemonBreeding">Egg Cycle</li>
-        </ul>
+        <div data-id="2" class="baseStats">
+            <ul class="stats">
+                <li class="lista statsPokemon">HP</li>
+                <li class="lista statsPokemon">Atackt</li>
+                <li class="lista statsPokemon">Defense</li>
+                <li class="lista statsPokemon">Sp. Atk</li>
+                <li class="lista statsPokemon">Sp. Def</li>
+                <li class="lista statsPokemon">Speed</li>
+                <li class="lista statsPokemon">Total</li>
+            </ul>
+        </div>
     </main>
+    
+    <script src="./assets/js/pokemon-models.js"></script>
+    <script src="./assets/js/card.js"></script>
 </body>
 
 </html>
