@@ -34,4 +34,3 @@ loadMoreButton.addEventListener('click', () => {
     loadPokemonItems (offset, limit)
 })
 
-element.innerHTML.link("../cards.html")
