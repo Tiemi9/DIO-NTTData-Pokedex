@@ -18,6 +18,7 @@ function identify(event) {
         
     }
 }
+
 //remove a classe 
 function removeClassShow(){
     const divs = document.querySelectorAll("body .main div")
@@ -28,3 +29,18 @@ function removeClassShow(){
 
     }
 }   
+
+
+//mudando a cor do like
+let btn = document.getElementById("btnHeart")
+let like = document.getElementById("heart")
+
+btn.onclick = () => {
+    if(btn.value === "like") {
+        like.src = "./assets/img/redLike.png"
+        btn.value = "dislike"
+    } else {
+        like.src = "./assets/img/whiteLike.png"
+        btn.value = "like" 
+    }
+}
