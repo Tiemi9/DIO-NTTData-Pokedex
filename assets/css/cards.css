@@ -39,6 +39,7 @@ li {
     font-weight: bold;
     letter-spacing: .15rem;
     margin-top: 1rem;
+    text-transform: capitalize;
 }
 
 .pokemons {
@@ -148,9 +149,7 @@ li {
     margin-top: 1rem;
     align-items: center;
 }
-u.breeding h3 {
-    margin: 1rem 0 1rem;
-}
+
 
 @media screen and (max-width: 487px) {
     body {

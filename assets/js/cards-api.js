@@ -1,3 +1,4 @@
+
 //consumindo Api
 //`https://pokeapi.co/api/v2/pokemon/${pokemon}`
 
@@ -11,8 +12,8 @@ function convertDataToPokemon(pokemon) {
                     <button class="button">
                         <a href="./index.html"><img src="./assets/img/seta.png" alt=""></a>
                     </button>
-                    <button id="btnHeart" class="button" value="like" >
-                        <img id="heart" src="./assets/img/whiteLike.png" alt="ícone de coração para curtir o card">
+                    <button  class="button btnHeart" value="like" >
+                        <img class="heart" src="./assets/img/whiteLike.png" alt="ícone de coração para curtir o card">
                     </button>
                 </div>
             </header>     
@@ -63,22 +64,17 @@ function convertDataToPokemon(pokemon) {
             </ul>
         </div>
         </main>
-        <script src="./assets/js/card.js"></script>
+        
     `
 
 }
 const pokeCard = document.getElementById('pokemonCards')
 
-
-
 fetch(url)
     .then(res => res.json())
     .then(data => data.results)
-    .then((pokemonCard) => {
-        //console.log(pokemonCard)
-        for (let i = 0; i < pokemonCard.length; i++) {
-            const pokemon = pokemonCard[i];
-            pokeCard.innerHTML += convertDataToPokemon(pokemon);
+    .then((pokemonCard = []) => {
+        pokeCard.innerHTML += pokemonCard.map(convertDataToPokemon).join('')
 
-        }
     }).catch((error) => console.error(error));
+
