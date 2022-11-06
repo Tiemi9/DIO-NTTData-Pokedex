@@ -1,3 +1,15 @@
+function convertTypes(pokemonTypes) {
+    return pokemonTypes.map((typeSlot) => `<li class="type">${typeSlot.type.name}</li>`
+)}
+
+function convertAbilities(pokemonAbilities) {
+    return pokemonAbilities.map((abilities) => `<li class="ability">${abilities.ability.name}</li>`
+)}
+
+function convertStats(pokemonStats) {
+    return pokemonStats.map((stats) => `<li class="stat">${stats.base_stat}</li>`
+    )}
+
 
 //consumindo Api
 //`https://pokeapi.co/api/v2/pokemon/${pokemon}`
@@ -21,16 +33,15 @@ function convertDataToPokemon(pokemon) {
         <hr>
         <div class="pokemons">
             <ul class="types">
-                <li class="type">grass</li>
-                <li class="type">poison</li>
+                ${convertTypes(pokemon.types).join('')}
             </ul>
 
-            <number class="number">#001</number>
+            <number class="number">#0${pokemon.id}</number>
         </div>
 
         <div class="img">
             <img class="pokemonImg"
-                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
+                src="${pokemon.sprites.other.dream_world.front_default}"
                 alt="Imagem do ${pokemon.name}">
         </div>
 
@@ -45,10 +56,10 @@ function convertDataToPokemon(pokemon) {
             <hr>
         <div data-id="1" class="about show" >
             <ul class="general">
-                <li class="lista aboutPokemon">Species: </li>
-                <li class="lista aboutPokemon">Height: </li>
-                <li class="lista aboutPokemon">weight: </li>
-                <li class="lista aboutPokemon">Abilities: </li>
+                <li class="lista aboutPokemon">Base Experience: ${pokemon.base_experience}</li>
+                <li class="lista aboutPokemon">Height: ${pokemon.height}</li>
+                <li class="lista aboutPokemon">Weight: ${pokemon.weight}</li>
+                <li class="lista aboutPokemon pokeAbilities">Abilities: ${convertAbilities(pokemon.abilities).join('  ')}</li>
             </ul>
         </div>
 
@@ -60,8 +71,8 @@ function convertDataToPokemon(pokemon) {
                 <li class="lista statsPokemon">Sp. Atk: </li>
                 <li class="lista statsPokemon">Sp. Def: </li>
                 <li class="lista statsPokemon">Speed: </li>
-                <li class="lista statsPokemon">Total: </li>
             </ul>
+            <div class="pokeStats">${convertStats(pokemon.stats).join('')}</div>
         </div>
         </main>
         
@@ -73,8 +84,14 @@ const pokeCard = document.getElementById('pokemonCards')
 fetch(url)
     .then(res => res.json())
     .then(data => data.results)
+    .then((pokemons) => pokemons.map((pokemon) => fetch(pokemon.url)
+        .then((response) => response.json())))
+    .then((detailRequest) => Promise.all(detailRequest))
+    .then((pokeDetails) => pokeDetails)
     .then((pokemonCard = []) => {
-        pokeCard.innerHTML += pokemonCard.map(convertDataToPokemon).join('')
+        pokeCard.innerHTML = pokemonCard.map(convertDataToPokemon).join('')
 
     }).catch((error) => console.error(error));
+
+    
 
