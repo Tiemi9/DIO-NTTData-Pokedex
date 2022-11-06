@@ -13,69 +13,72 @@ function convertStats(pokemonStats) {
 
 //consumindo Api
 //`https://pokeapi.co/api/v2/pokemon/${pokemon}`
+const limit = 100;
+const offset = 0;
 
-const url = `https://pokeapi.co/api/v2/pokemon/`
+const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
 
 function convertDataToPokemon(pokemon) {
     return `
-    <section  class="card ${pokemon.types[0].type.name}">
-            <header class="header ">
-                <div class="options">
-                    <button class="button">
-                        <a href="./index.html"><img src="./assets/img/seta.png" alt=""></a>
-                    </button>
-                    <button  class="button btnHeart" value="like" >
-                        <img class="heart" src="./assets/img/whiteLike.png" alt="ícone de coração para curtir o card">
-                    </button>
-                </div>
-            </header>     
-    <h2 class="name">${pokemon.name}</h2>
-        <hr>
-        <div class="pokemons">
-            <ul class="types ">
-                ${convertTypes(pokemon.types).join('')}
-            </ul>
-
-            <number class="number">#0${pokemon.id}</number>
-        </div>
-
-        <div class="img">
-            <img class="pokemonImg"
-                src="${pokemon.sprites.other.dream_world.front_default}"
-                alt="Imagem do ${pokemon.name}">
-        </div>
-
-    </section>
-
-
-    <main class="main">
-        <nav class="navgation">
-            <li id="1" class="lista navBar">About</li>
-            <li id="2" class="lista navBar">Base Stats</li>
-        </nav>
+    <div data-id="${pokemon.id}"id="pokemonCards">
+        <section  class="card ${pokemon.types[0].type.name}">
+                <header class="header ">
+                    <div class="options">
+                        <button class="button">
+                            <a href="./index.html"><img src="./assets/img/seta.png" alt=""></a>
+                        </button>
+                        <button  id="btnHeart" class="button " value="like" >
+                            <img id="heart" src="./assets/img/whiteLike.png" alt="ícone de coração para curtir o card">
+                        </button>
+                    </div>
+                </header>     
+        <h2 class="name">${pokemon.name}</h2>
             <hr>
-        <div data-id="1" class="about show" >
-            <ul class="general">
-                <li class="lista aboutPokemon">Base Experience: ${pokemon.base_experience}</li>
-                <li class="lista aboutPokemon">Height: ${pokemon.height}</li>
-                <li class="lista aboutPokemon">Weight: ${pokemon.weight}</li>
-                <li class="lista aboutPokemon pokeAbilities">Abilities: ${convertAbilities(pokemon.abilities).join('  ')}</li>
-            </ul>
-        </div>
+            <div class="pokemons">
+                <ul class="types ">
+                    ${convertTypes(pokemon.types).join('')}
+                </ul>
 
-        <div data-id="2" class="baseStats">
-            <ul class="stats">
-                <li class="lista statsPokemon">HP: </li>
-                <li class="lista statsPokemon">Atackt: </li>
-                <li class="lista statsPokemon">Defense: </li>
-                <li class="lista statsPokemon">Sp. Atk: </li>
-                <li class="lista statsPokemon">Sp. Def: </li>
-                <li class="lista statsPokemon">Speed: </li>
-            </ul>
-            <div class="pokeStats">${convertStats(pokemon.stats).join('')}</div>
-        </div>
+                <number class="number">#0${pokemon.id}</number>
+            </div>
+
+            <div class="img">
+                <img class="pokemonImg"
+                    src="${pokemon.sprites.other.dream_world.front_default}"
+                    alt="Imagem do ${pokemon.name}">
+            </div>
+
+        </section>
+
+
+        <main class="main">
+            <nav class="navgation">
+                <li id="1" class="lista navBar">About</li>
+                <li id="2" class="lista navBar">Base Stats</li>
+            </nav>
+                <hr>
+            <div data-id="1" class="about show" >
+                <ul class="general">
+                    <li class="lista aboutPokemon">Base Experience: ${pokemon.base_experience}</li>
+                    <li class="lista aboutPokemon">Height: ${pokemon.height}</li>
+                    <li class="lista aboutPokemon">Weight: ${pokemon.weight}</li>
+                    <li class="lista aboutPokemon pokeAbilities">Abilities: ${convertAbilities(pokemon.abilities).join('  ')}</li>
+                </ul>
+            </div>
+
+            <div data-id="2" class="baseStats">
+                <ul class="stats">
+                    <li class="lista statsPokemon">HP: </li>
+                    <li class="lista statsPokemon">Atackt: </li>
+                    <li class="lista statsPokemon">Defense: </li>
+                    <li class="lista statsPokemon">Sp. Atk: </li>
+                    <li class="lista statsPokemon">Sp. Def: </li>
+                    <li class="lista statsPokemon">Speed: </li>
+                </ul>
+                <div class="pokeStats">${convertStats(pokemon.stats).join('')}</div>
+            </div>
         </main>
-        
+    </div>
     `
 
 }

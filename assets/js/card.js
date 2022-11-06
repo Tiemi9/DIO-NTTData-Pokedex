@@ -1,7 +1,7 @@
 //coloca a classe show de acordo com o click
 const listOptions = document.querySelector(".navgation")
 
-listOptions.addEventListener("click", identify)
+listOptions.addEventListener('click', identify)
 
 function identify(event) {
 
@@ -44,4 +44,4 @@ btn.onclick = () => {
         btn.value = "like"
     }
 }
-
+console.log("Ident")

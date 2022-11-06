@@ -2,6 +2,7 @@
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
     margin: 0;
+    text-decoration: none;
 }
 
 body {
@@ -23,20 +24,34 @@ header {
 }
 
 h1 {
-    color: #f8f40e;    
+    color: #f8f40e;
     text-shadow: rgb(19, 34, 238) 10px 0 10px;
     font-size: 4rem;
     -webkit-text-stroke: 1px rgba(8, 8, 8, 0.164);
-    padding-left: 8rem;
     margin: 0;
+    opacity: 0;
+    animation: appear1 0.7s forwards;
+}
+
+h1:hover {
+    scale: .9;
 }
 
 .content .headerImg {
     border-radius: 5rem;
-    width:60rem;
-    
+    width: 60em;
 }
 
+@keyframes appear1 {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 
 @media screen and (min-width: 992px) {
     .content {
