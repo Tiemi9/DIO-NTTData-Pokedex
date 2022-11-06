@@ -2,6 +2,7 @@ function convertTypes(pokemonTypes) {
     return pokemonTypes.map((typeSlot) => `<li class="type">${typeSlot.type.name}</li>`
 )}
 
+
 function convertAbilities(pokemonAbilities) {
     return pokemonAbilities.map((abilities) => `<li class="ability">${abilities.ability.name}</li>`
 )}
@@ -10,7 +11,6 @@ function convertStats(pokemonStats) {
     return pokemonStats.map((stats) => `<li class="stat">${stats.base_stat}</li>`
     )}
 
-
 //consumindo Api
 //`https://pokeapi.co/api/v2/pokemon/${pokemon}`
 
@@ -18,8 +18,8 @@ const url = `https://pokeapi.co/api/v2/pokemon/`
 
 function convertDataToPokemon(pokemon) {
     return `
-    <section  class="card">
-            <header class="header">
+    <section  class="card ${pokemon.types[0].type.name}">
+            <header class="header ">
                 <div class="options">
                     <button class="button">
                         <a href="./index.html"><img src="./assets/img/seta.png" alt=""></a>
@@ -32,7 +32,7 @@ function convertDataToPokemon(pokemon) {
     <h2 class="name">${pokemon.name}</h2>
         <hr>
         <div class="pokemons">
-            <ul class="types">
+            <ul class="types ">
                 ${convertTypes(pokemon.types).join('')}
             </ul>
 
@@ -91,7 +91,7 @@ fetch(url)
     .then((pokemonCard = []) => {
         pokeCard.innerHTML = pokemonCard.map(convertDataToPokemon).join('')
 
-    }).catch((error) => console.error(error));
+    })
 
     
 
