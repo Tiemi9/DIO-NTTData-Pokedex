@@ -8,8 +8,6 @@
 - Cards<br>
 ![Preview](./.github/previewCard.png)
 
-
-
 Projeto para explorar o mundo Pokémon através do consumo de uma API REST para a criação de uma Pokédex incrível! 
 Além disso, exploramos todos os fundamentos de desenvolvimento Web aprendidos até aqui.
 
