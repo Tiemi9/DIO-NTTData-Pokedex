@@ -5,7 +5,7 @@
 - Página principal:
 ![preview](./.github/preview.png)
 
-- Cards
+- Cards<br>
 ![Preview](./.github/previewCard.png)
 
 Projeto para explorar o mundo Pokémon através do consumo de uma API REST para a criação de uma Pokédex incrível! 

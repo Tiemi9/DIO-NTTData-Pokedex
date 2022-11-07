@@ -44,4 +44,4 @@ btn.onclick = () => {
         btn.value = "like"
     }
 }
-console.log("Ident")
+

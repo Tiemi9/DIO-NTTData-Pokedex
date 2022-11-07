@@ -27,9 +27,14 @@
 a {
     padding: .3rem;
 }
-.button {
+
+.buttonCard {
     border: none;
     background-color: transparent;
+}
+
+.buttonCard:hover {
+    cursor: pointer;
 }
 
 .nameId {
