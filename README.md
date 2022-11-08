@@ -9,12 +9,12 @@
 ![Preview](./.github/previewCard.png)
 
 - Como deveria ser:
-![preview](./.github/preview.mp4)
+[Assita o vídeo de como ficou...👈](https://youtu.be/eOWsumVSWMM)
 
 Projeto para explorar o mundo Pokémon através do consumo de uma API REST para a criação de uma Pokédex incrível! 
 Além disso, exploramos todos os fundamentos de desenvolvimento Web aprendidos até aqui.
 
-[Clique aqui para acessar!!👈](https://tiemi9.github.io/DIO-NTTData-Pokedex/)
+[Clique aqui para acessar a página!!👈](https://tiemi9.github.io/DIO-NTTData-Pokedex/)
 
 ## 📡 Tecnologias
 
