@@ -8,6 +8,9 @@
 - Cards<br>
 ![Preview](./.github/previewCard.png)
 
+- Como deveria ser:
+![preview](./.github/preview.mp4)
+
 Projeto para explorar o mundo Pokémon através do consumo de uma API REST para a criação de uma Pokédex incrível! 
 Além disso, exploramos todos os fundamentos de desenvolvimento Web aprendidos até aqui.
 
